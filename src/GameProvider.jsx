@@ -44,7 +44,7 @@ function GameProvider({ children }) {
         for (let cluster = 0; cluster < clusterCount; cluster++) {
             const clusterRow = Math.floor(Math.random() * rows);
             const clusterCol = Math.floor(Math.random() * cols);
-
+        
             for (let i = -clusterRadius; i <= clusterRadius; i++) {
                 for (let j = -clusterRadius; j <= clusterRadius; j++) {
                     const newRow = clusterRow + i;
@@ -85,7 +85,7 @@ function GameProvider({ children }) {
         if (newGrid[row][col]) {
             newAges[row][col] = 1;
         } else {
-            newAges[row][col] = 10;
+            newAges[row][col] += 1;
         }
         setGrid(newGrid);
         setAges(newAges);
@@ -99,6 +99,7 @@ function GameProvider({ children }) {
         setRows(newRows);
         setCols(newCols);
         setGrid(createEmptyGrid(newRows, newCols));
+        setAges(createAges(newRows, newCols));
     }
 
     function resetGrid() {
