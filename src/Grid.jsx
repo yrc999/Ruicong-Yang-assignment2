@@ -1,15 +1,14 @@
-import React, { useMemo } from 'react';
-import { useGameContext } from './GameProvider';
-import Cell from './Cell';
+import React, { useMemo } from "react";
+import { useGameContext } from "./GameProvider";
+import Cell from "./Cell";
 import "./Grid.css";
 
 function Grid() {
     const { cols, rows, grid, flipCell, ages, heatMapMode } = useGameContext();
 
-    // Calculate cell size dynamically based on the number of columns and rows
     const cellSize = useMemo(() => {
-        const totalWidth = 100; // Assuming 100% width
-        const totalHeight = 100; // Assuming 100% height
+        const totalWidth = 100;
+        const totalHeight = 100;
         const cellWidth = totalWidth / cols;
         const cellHeight = totalHeight / rows;
         return {

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGameContext } from "./GameProvider";
 import Grid from "./Grid";
 import Nav from "./Nav";
+import "./Game.css";
 
 function Game() {
     const { rows, cols, flipCell, handleSizeChange, resetGrid, progressSimulation, livingCells, toggleHeatMap, autoplay, toggleAutoplay } = useGameContext();

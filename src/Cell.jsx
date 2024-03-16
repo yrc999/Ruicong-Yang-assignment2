@@ -1,5 +1,5 @@
-import React from 'react';
-import './Cell.css';
+import React from "react";
+import "./Cell.css";
 
 function Cell({ row, col, alive, flipCell, age, heatMap }) {
     const handleClick = () => {

@@ -1,6 +1,6 @@
-import React from 'react';
-import GameProvider from './GameProvider';
-import Game from './Game';
+import React from "react";
+import GameProvider from "./GameProvider";
+import Game from "./Game";
 
 function GameWrapper() {
     return (

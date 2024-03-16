@@ -1,7 +1,14 @@
 .cell {
-    width: 20px;
-    height: 20px;
+    width: calc(3vw - 2px);
+    height: calc(3vw - 2px);
     border: 1px solid gray;
+}
+
+@media (min-width: 768px) {
+    .cell {
+        width: 20px;
+        height: 20px;
+    }
 }
 
 .alive {
