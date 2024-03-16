@@ -10,7 +10,7 @@ function GameProvider({ children }) {
     const [grid, setGrid] = useState(() => createEmptyGrid(rows, cols));
     const [livingCells, setLivingCells] = useState(0);
     const [heatMapMode, setHeatMapMode] = useState(false);
-    const [ages, setAges] = useState(() => createAges(rows, cols));
+    const [ages, setAges] = useState(() => createAges(grid, rows, cols));
     const [autoplay, setAutoplay] = useState(false);
 
     useEffect(() => {
@@ -62,7 +62,7 @@ function GameProvider({ children }) {
     }
     
 
-    function createAges(rows, cols) {
+    function createAges(grid, rows, cols) {
         const ages = [];
         for (let i = 0; i < rows; i++) {
             const rowAges = [];
@@ -98,13 +98,15 @@ function GameProvider({ children }) {
         }
         setRows(newRows);
         setCols(newCols);
-        setGrid(createEmptyGrid(newRows, newCols));
-        setAges(createAges(newRows, newCols));
+        let grid = createEmptyGrid(rows, cols);
+        setGrid(createEmptyGrid(rows, cols));
+        setAges(createAges(grid, rows, cols));
     }
 
     function resetGrid() {
-        setGrid(createEmptyGrid(20, 20));
-        setAges(createAges(20, 20));
+        let grid = createEmptyGrid(20, 20);
+        setGrid(createEmptyGrid(grid));
+        setAges(createAges(grid, 20, 20));
     }
 
     function toggleHeatMap() {

@@ -1,5 +1,4 @@
 .grid {
     display: grid;
     gap: 1px;
-    border: 1px solid black;
 }
