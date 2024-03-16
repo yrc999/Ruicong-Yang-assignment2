@@ -1,4 +1,4 @@
-import GameWrapper from "./GameWrapper";
+import GameWrapper from "./GameWrapper.jsx";
 function App() {
   return (
     <div>
