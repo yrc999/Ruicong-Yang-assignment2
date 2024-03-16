@@ -104,6 +104,8 @@ function GameProvider({ children }) {
     }
 
     function resetGrid() {
+        setCols(20);
+        setRows(20);
         let grid = createEmptyGrid(20, 20);
         setGrid(createEmptyGrid(grid));
         setAges(createAges(grid, 20, 20));
