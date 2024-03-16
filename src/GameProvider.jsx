@@ -98,16 +98,16 @@ function GameProvider({ children }) {
         }
         setRows(newRows);
         setCols(newCols);
-        let grid = createEmptyGrid(rows, cols);
-        setGrid(createEmptyGrid(rows, cols));
-        setAges(createAges(grid, rows, cols));
+        let grid = createEmptyGrid(newRows, newCols);
+        setGrid(grid);
+        setAges(createAges(grid, newRows, newCols));
     }
 
     function resetGrid() {
         setCols(20);
         setRows(20);
         let grid = createEmptyGrid(20, 20);
-        setGrid(createEmptyGrid(grid));
+        setGrid(grid);
         setAges(createAges(grid, 20, 20));
     }
 
