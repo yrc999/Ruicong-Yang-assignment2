@@ -16,7 +16,7 @@ function GameProvider({ children }) {
     useEffect(() => {
         let interval;
         if (autoplay) {
-            interval = setInterval(progressSimulation, 500);
+            interval = setInterval(progressSimulation, 100);
         }
         return () => clearInterval(interval);
     }, [autoplay, progressSimulation]);
